@@ -11,7 +11,6 @@ end
 
 group :production do
   gem 'pg'
-  gem 'errplane'
 end
 
 # Gems used only for assets and not required
@@ -44,3 +43,5 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'devise'
+
+gem 'errplane'
