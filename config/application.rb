@@ -61,5 +61,14 @@ module Nagare
 
     # Devise
     config.assets.initialize_on_precompile = false
+
+    # see https://github.com/thomas-mcdonald/bootstrap-sass
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
+    # haml
+    config.generators do |g|
+      g.template_engine :haml
+    end
+
   end
 end

@@ -7,6 +7,8 @@ gem 'rails', '3.2.13'
 
 group :development do
   gem 'mysql2'
+  gem 'html2haml'
+  gem 'erb2haml'
 end
 
 group :production do
@@ -46,3 +48,8 @@ gem 'devise'
 
 gem 'errplane'
 gem 'newrelic_rpm'
+
+gem 'haml'
+
+
+gem 'bootstrap-sass', '~> 2.3.1.0'
