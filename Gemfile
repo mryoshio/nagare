@@ -45,3 +45,4 @@ gem 'jquery-rails'
 gem 'devise'
 
 gem 'errplane'
+gem 'newrelic_rpm'
