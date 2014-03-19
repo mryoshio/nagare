@@ -1,4 +1,6 @@
 Nagare::Application.routes.draw do
+  get "bots/index"
+
   get "dashboard/index"
 
   devise_for :users
