@@ -1,6 +1,16 @@
+groups = \
+[
+ {
+   name: "First Group",
+   code: 0
+ }
+]
+groups.each { |g| Group.create!(g) }
+
 users = \
 [
  {
+   group_id: Group.first.id,
    name: "Mike Davis",
    email: "mike@example.com",
    password: "mikemike55",
