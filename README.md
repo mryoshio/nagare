@@ -1,4 +1,4 @@
 nagare
 ======
 
-schedule management
+Schedule Management
