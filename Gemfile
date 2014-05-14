@@ -10,6 +10,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'thin'
 gem 'clerk'
 gem 'newrelic_rpm'
+gem "seedbank"
 
 group :development do
   gem 'html2haml'
