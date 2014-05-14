@@ -10,3 +10,10 @@ env:
 script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake spec
+deploy:
+  provider: heroku
+  api_key:
+    secure: biBghAG/v6PQsBmiTFHEv1T/nq9lSyFXK2kKsSqP91Vw87KlQaTAmOACYvFP2Gld3IR69H6dYgIENeT/5omYlZWA70zQuMrQmHj8igEcqHdffwi0i/PdzEh+AEFldsZMiFZfsaFxaI8jiy1X+qm2FiYY6//dA74hVSaeCUNlE1Q=
+  app: nagare
+  on: production
+  run: rake db:migrate
