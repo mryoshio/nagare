@@ -3,4 +3,4 @@ Nagare
 
 [![Build Status](https://travis-ci.org/tachibanakikaku/nagare.svg?branch=master)](https://travis-ci.org/tachibanakikaku/nagare)
 
-Nagere provides platform to tell user's positioning.
+Nagare provides platform to tell user's positioning.
