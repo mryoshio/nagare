@@ -11,6 +11,7 @@ gem 'thin'
 gem 'clerk'
 gem 'newrelic_rpm'
 gem "seedbank"
+gem 'coffee-rails'
 
 group :development do
   gem 'html2haml'
@@ -19,7 +20,6 @@ end
 
 group :development, :test do
   gem 'mysql2'
-  gem 'coffee-rails'
   gem 'rspec-rails'
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier'
