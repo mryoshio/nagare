@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Uuid:
+  = @beacon.uuid
+%p
+  %b Major:
+  = @beacon.major
+%p
+  %b Minor:
+  = @beacon.minor
+%p
+  %b Color:
+  = @beacon.color
+%p
+  %b Name:
+  = @beacon.name
+
+= link_to 'Edit', edit_beacon_path(@beacon)
+\|
+= link_to 'Back', beacons_path

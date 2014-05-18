@@ -1,0 +1,21 @@
+%h1 Listing beacon_holders
+
+%table
+  %tr
+    %th Beacon
+    %th Patient
+    %th
+    %th
+    %th
+
+  - @beacon_holders.each do |beacon_holder|
+    %tr
+      %td= beacon_holder.beacon_id
+      %td= beacon_holder.patient_id
+      %td= link_to 'Show', beacon_holder
+      %td= link_to 'Edit', edit_beacon_holder_path(beacon_holder)
+      %td= link_to 'Destroy', beacon_holder, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Beacon holder', new_beacon_holder_path

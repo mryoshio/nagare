@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Beacon:
+  = @beacon_holder.beacon_id
+%p
+  %b Patient:
+  = @beacon_holder.patient_id
+
+= link_to 'Edit', edit_beacon_holder_path(@beacon_holder)
+\|
+= link_to 'Back', beacon_holders_path

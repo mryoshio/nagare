@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @receiver.name
+%p
+  %b Description:
+  = @receiver.description
+
+= link_to 'Edit', edit_receiver_path(@receiver)
+\|
+= link_to 'Back', receivers_path
