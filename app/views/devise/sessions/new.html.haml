@@ -1,18 +1,16 @@
-%h2.text-center Sign in
-%br
+%h2 Sign in
 = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  .text-center
+  %div
     = f.label :email
+    %br
     = f.email_field :email, :autofocus => true
-  .text-center
+  %div
     = f.label :password
+    %br
     = f.password_field :password
   - if devise_mapping.rememberable?
-    .text-center
+    %div
       = f.check_box :remember_me
       = f.label :remember_me
-  %br
-  .text-center= f.submit "Sign in"
-  %br
-  .text-center
-    = render "devise/shared/links"
+  %div= f.submit "Sign in"
+= render "devise/shared/links"
