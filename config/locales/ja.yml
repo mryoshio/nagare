@@ -1,0 +1,48 @@
+ja:
+  brand: NAGARE
+  login: ログイン
+  logout: ログアウト
+  save: 保存する
+  back: 戻る
+  mypage: マイページ
+  action:
+    show: 表示
+    edit: 編集
+    destroy: 削除
+    destroy_confirm: 本当に削除しますか？
+  dashboard: ダッシュボード
+  beacon_menu: ビーコン関連メニュー
+  beacon_holder:
+    title: ビーコンホルダの管理
+    description: ビーコンと対象を関連付けます。先にビーコンと患者を登録して下さい。
+  beacons:
+    index:
+      title: ビーコンの管理
+      description: ビーコンを管理します。
+    new:
+      title: ビーコンの新規登録
+    edit:
+      title: ビーコンの編集
+  patient:
+    title: 患者の管理
+    description: 患者を管理します。
+  station_menu: ステーション関連メニュー
+  station:
+    title: ステーションの管理
+    description: 受信機と設置場所を関連付けます。先に受信機と設置場所を登録して下さい。
+  receiver:
+    title: 受信機の管理
+    description: 受信機を管理します。
+  place:
+    title: 設置場所の管理
+    description: 設置場所を管理します。
+  activerecord:
+    models:
+      beacon: ビーコン
+    attributes:
+      beacon:
+        uuid: UUID
+        major: メジャー番号
+        minor: マイナー番号
+        color: 色
+        name: 名前

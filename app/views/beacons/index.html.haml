@@ -1,16 +1,14 @@
-%h1 Listing beacons
-
-%table
+%h1= t('beacons.index.title')
+%table.table.table-striped.table-hover
   %tr
-    %th Uuid
-    %th Major
-    %th Minor
-    %th Color
-    %th Name
+    %th= Beacon.human_attribute_name(:uuid)
+    %th= Beacon.human_attribute_name(:major)
+    %th= Beacon.human_attribute_name(:minor)
+    %th= Beacon.human_attribute_name(:color)
+    %th= Beacon.human_attribute_name(:name)
     %th
     %th
     %th
-
   - @beacons.each do |beacon|
     %tr
       %td= beacon.uuid
@@ -18,10 +16,7 @@
       %td= beacon.minor
       %td= beacon.color
       %td= beacon.name
-      %td= link_to 'Show', beacon
-      %td= link_to 'Edit', edit_beacon_path(beacon)
-      %td= link_to 'Destroy', beacon, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Beacon', new_beacon_path
+      %td= link_to t('action.show'), beacon
+      %td= link_to t('action.edit'), edit_beacon_path(beacon)
+      %td= link_to t('action.destroy'), beacon, method: :delete, data: { confirm: t('action.destroy_confirm') }
+= link_to t('beacons.new.title'), new_beacon_path
