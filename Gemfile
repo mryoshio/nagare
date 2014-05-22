@@ -27,6 +27,7 @@ end
 
 group :test do
   gem 'ffaker'
+  gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'rubocop', require: false
 end
