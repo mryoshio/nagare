@@ -3,8 +3,11 @@ require 'spec_helper'
 describe BeaconsController do
 
   login_as(:mike_user)
-  let(:valid_session) { {} }
+
   let!(:beacon) { create(:navy_beacon) }
+
+  let(:valid_attributes) { attributes_for(:blue_beacon) }
+  let(:valid_session) { {} }
 
   describe "GET index" do
     before { get :index, {}, valid_session }
@@ -22,107 +25,54 @@ describe BeaconsController do
   end
 
   describe "GET edit" do
-    it "assigns the requested beacon as @beacon" do
-      beacon = Beacon.create! valid_attributes
-      get :edit, {:id => beacon.to_param}, valid_session
-      assigns(:beacon).should eq(beacon)
-    end
+    before { get :edit, { id: beacon.id }, valid_session }
+    it { expect(assigns[:beacon]).to eq(beacon) }
   end
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Beacon" do
-        expect {
-          post :create, {:beacon => valid_attributes}, valid_session
-        }.to change(Beacon, :count).by(1)
-      end
+      before { post :create, { beacon: valid_attributes}, valid_session }
 
-      it "assigns a newly created beacon as @beacon" do
-        post :create, {:beacon => valid_attributes}, valid_session
-        assigns(:beacon).should be_a(Beacon)
-        assigns(:beacon).should be_persisted
-      end
-
-      it "redirects to the created beacon" do
-        post :create, {:beacon => valid_attributes}, valid_session
-        response.should redirect_to(Beacon.last)
-      end
+      it { expect(assigns[:beacon]).to be_a(Beacon) }
+      it { expect(assigns[:beacon]).to be_persisted }
+      it { expect(response).to redirect_to(Beacon.last) }
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved beacon as @beacon" do
-        # Trigger the behavior that occurs when invalid params are submitted
+      before do
         Beacon.any_instance.stub(:save).and_return(false)
-        post :create, {:beacon => { "uuid" => "invalid value" }}, valid_session
-        assigns(:beacon).should be_a_new(Beacon)
+        post :create, { beacon: { "uuid" => "invalid value" } }, valid_session
       end
 
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Beacon.any_instance.stub(:save).and_return(false)
-        post :create, {:beacon => { "uuid" => "invalid value" }}, valid_session
-        response.should render_template("new")
-      end
+      it { expect(assigns[:beacon]).to be_a_new(Beacon) }
+      it { expect(response).to render_template(:new) }
     end
   end
 
   describe "PUT update" do
     describe "with valid params" do
-      it "updates the requested beacon" do
-        beacon = Beacon.create! valid_attributes
-        # Assuming there are no other beacons in the database, this
-        # specifies that the Beacon created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Beacon.any_instance.should_receive(:update).with({ "uuid" => "MyString" })
-        put :update, {:id => beacon.to_param, :beacon => { "uuid" => "MyString" }}, valid_session
-      end
+      before { put :update, { id: beacon.id, beacon: { "uuid" => "new-uuid" } }, valid_session }
 
-      it "assigns the requested beacon as @beacon" do
-        beacon = Beacon.create! valid_attributes
-        put :update, {:id => beacon.to_param, :beacon => valid_attributes}, valid_session
-        assigns(:beacon).should eq(beacon)
-      end
-
-      it "redirects to the beacon" do
-        beacon = Beacon.create! valid_attributes
-        put :update, {:id => beacon.to_param, :beacon => valid_attributes}, valid_session
-        response.should redirect_to(beacon)
-      end
+      it { expect(assigns[:beacon]).to eq(beacon) }
+      it { expect(response).to redirect_to(beacon) }
     end
 
     describe "with invalid params" do
-      it "assigns the beacon as @beacon" do
-        beacon = Beacon.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
+      before do
         Beacon.any_instance.stub(:save).and_return(false)
-        put :update, {:id => beacon.to_param, :beacon => { "uuid" => "invalid value" }}, valid_session
-        assigns(:beacon).should eq(beacon)
+        put :update, { id: beacon.id, beacon: { "uuid" => "invalid value" } }, valid_session
       end
 
-      it "re-renders the 'edit' template" do
-        beacon = Beacon.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Beacon.any_instance.stub(:save).and_return(false)
-        put :update, {:id => beacon.to_param, :beacon => { "uuid" => "invalid value" }}, valid_session
-        response.should render_template("edit")
-      end
+      it { expect(assigns[:beacon]).to eq(beacon) }
+      it { expect(response).to render_template(:edit) }
     end
   end
 
   describe "DELETE destroy" do
-    it "destroys the requested beacon" do
-      beacon = Beacon.create! valid_attributes
-      expect {
-        delete :destroy, {:id => beacon.to_param}, valid_session
-      }.to change(Beacon, :count).by(-1)
-    end
+    before { delete :destroy, { id: beacon.id }, valid_session }
 
-    it "redirects to the beacons list" do
-      beacon = Beacon.create! valid_attributes
-      delete :destroy, {:id => beacon.to_param}, valid_session
-      response.should redirect_to(beacons_url)
-    end
+    it { expect(Beacon.count).to eq(0) }
+    it { expect(response).to redirect_to(beacons_url) }
   end
 
 end
