@@ -1,0 +1,35 @@
+= form_for @beacon, html: { class: "form-horizontal", role: "form" } do |f|
+  - if @beacon.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@beacon.errors.count, "error")} prohibited this beacon from being saved:"
+      %ul
+        - @beacon.errors.full_messages.each do |msg|
+          %li= msg
+  .form-group
+    .col-xs-2.control-label
+      = f.label :uuid
+    .col-md-4
+      = f.text_field :uuid, autofocus: true, class: "form-control", placeholder: "UUID"
+  .form-group
+    .col-xs-2.control-label
+      = f.label :major
+    .col-md-4
+      = f.number_field :major, class: "form-control"
+  .form-group
+    .col-xs-2.control-label
+      = f.label :minor
+    .col-md-4
+      = f.number_field :minor, class: "form-control"
+  .form-group
+    .col-xs-2.control-label
+      = f.label :color
+    .col-md-4
+      = f.text_field :color, class: "form-control", placeholder: "navy"
+  .form-group
+    .col-xs-2.control-label
+      = f.label :name
+    .col-md-4
+      = f.text_field :name, class: "form-control", placeholder: "entrance"
+  .form-group
+    .col-md-2.col-md-offset-1.control-label.actions
+      = f.submit t :save

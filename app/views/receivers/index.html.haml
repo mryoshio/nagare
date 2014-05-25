@@ -1,0 +1,16 @@
+%h1= t('receivers.index.title')
+%table.table.table-striped.table-hover
+  %tr
+    %th= Receiver.human_attribute_name(:name)
+    %th= Receiver.human_attribute_name(:description)
+    %th
+    %th
+    %th
+  - @receivers.each do |receiver|
+    %tr
+      %td= receiver.name
+      %td= receiver.description
+      %td= link_to t('action.show'), receiver
+      %td= link_to t('action.edit'), edit_receiver_path(receiver)
+      %td= link_to t('action.destroy'), receiver, method: :delete, data: { confirm: t('action.destroy_confirm') }
+= link_to t('receivers.new.title'), new_receiver_path

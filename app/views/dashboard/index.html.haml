@@ -1,2 +1,26 @@
-%h1 Dashboard#index
-%p Find me in app/views/dashboard/index.html.erb
+.panel.panel-default
+  .panel-heading= t :beacon_menu
+  .panel-body
+    .list-group
+      %a{ href: "#", class: "list-group-item list-group-item-success" }
+        %h4{ class: "list-group-item-heading" }= t 'beacon_holder.title'
+        %p{ class: "list-group-item-text" }= t 'beacon_holder.description'
+      %a{ href: beacons_path, class: "list-group-item" }
+        %h4{ class: "list-group-item-heading" }= t 'beacons.index.title'
+        %p{ class: "list-group-item-text" }= t 'beacons.index.description'
+      %a{ href: patients_path, class: "list-group-item" }
+        %h4{ class: "list-group-item-heading" }= t 'patients.index.title'
+        %p{ class: "list-group-item-text" }= t 'patients.index.description'
+.panel.panel-default
+  .panel-heading= t :station_menu
+  .panel-body
+    .list-group
+      %a{ href: "#", class: "list-group-item list-group-item-success" }
+        %h4{ class: "list-group-item-heading" }= t 'station.title'
+        %p{ class: "list-group-item-text" }= t 'station.description'
+      %a{ href: receivers_path, class: "list-group-item" }
+        %h4{ class: "list-group-item-heading" }= t 'receiver.title'
+        %p{ class: "list-group-item-text" }= t 'receiver.description'
+      %a{ href: places_path, class: "list-group-item" }
+        %h4{ class: "list-group-item-heading" }= t 'places.index.title'
+        %p{ class: "list-group-item-text" }= t 'places.index.description'

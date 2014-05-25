@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Place:
+  = @station.place_id
+%p
+  %b Receiver:
+  = @station.receiver_id
+
+= link_to 'Edit', edit_station_path(@station)
+\|
+= link_to 'Back', stations_path

@@ -1,0 +1,15 @@
+= form_for @place, html: { class: "form-horizontal", role: "form" } do |f|
+  - if @place.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@place.errors.count, "error")} prohibited this place from being saved:"
+      %ul
+        - @place.errors.full_messages.each do |msg|
+          %li= msg
+  .form-group
+    .col-xs-2.control-label
+      = f.label :name
+    .col-md-4
+      = f.text_field :name, class: "form-control", placeholder: "entrance"
+  .form-group
+    .col-md-2.col-md-offset-1.control-label.actions
+      = f.submit t :save

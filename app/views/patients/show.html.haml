@@ -1,0 +1,7 @@
+%p#notice= notice
+.row
+  .col-xs-2= label_tag :uuid, Patient.human_attribute_name('name')
+  .col-xs-5= @patient.name
+= link_to t('action.edit'), edit_patient_path(@patient)
+\|
+= link_to t(:back), patients_path

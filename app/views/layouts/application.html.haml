@@ -6,6 +6,18 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+    .row
+      %nav.navbar.navbar-default{ role: "navigation" }
+        .navbar-header
+          %a.navbar-brand{ href: root_path }= t("brand")
+        .collapse.navbar-collapse
+          - if user_signed_in?
+            = render "logout"
+          - else
+            = render "login"
+    -# %p.notice= notice
+    -# %p.alert= alert
+    .container-fluid
+      .row
+        .container
+          = yield

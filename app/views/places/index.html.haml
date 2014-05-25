@@ -1,0 +1,14 @@
+%h1= t('places.index.title')
+%table.table.table-striped.table-hover
+  %tr
+    %th= Place.human_attribute_name(:name)
+    %th
+    %th
+    %th
+  - @places.each do |place|
+    %tr
+      %td= place.name
+      %td= link_to t('action.show'), place
+      %td= link_to t('action.edit'), edit_place_path(place)
+      %td= link_to t('action.destroy'), place, method: :delete, data: { confirm: t('action.destroy_confirm') }
+= link_to t('places.new.title'), new_place_path

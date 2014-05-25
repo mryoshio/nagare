@@ -1,0 +1,11 @@
+%ul.nav.navbar-nav.navbar-right
+  %li.dropdown
+    %a.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
+      %span.glyphicon.glyphicon-user
+      %b.caret
+    %ul.dropdown-menu
+      %li
+        %a{ href: edit_user_registration_path(current_user) }= t(:mypage)
+      %li.divider
+      %li
+        = link_to t(:logout), destroy_user_session_path, method: :delete

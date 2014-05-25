@@ -1,0 +1,15 @@
+= form_for @patient, html: { class: "form-horizontal", role: "form" } do |f|
+  - if @patient.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@patient.errors.count, "error")} prohibited this patient from being saved:"
+      %ul
+        - @patient.errors.full_messages.each do |msg|
+          %li= msg
+  .form-group
+    .col-xs-2.control-label
+      = f.label :name
+    .col-md-4
+      = f.text_field :name, class: "form-control", placeholder: "Mike Davis"
+  .form-group
+    .col-md-2.col-md-offset-1.control-label.actions
+      = f.submit t :save
