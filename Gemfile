@@ -34,6 +34,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 personal = File.expand_path("../Gemfile.personal", __FILE__)
