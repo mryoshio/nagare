@@ -23,9 +23,30 @@ ja:
       title: ビーコンの新規登録
     edit:
       title: ビーコンの編集
-  patient:
-    title: 患者の管理
-    description: 患者を管理します。
+  patients:
+    index:
+      title: 患者の管理
+      description: 患者を管理します。
+    new:
+      title: 患者の新規登録
+    edit:
+      title: 患者の編集
+  receivers:
+    index:
+      title: 受信機の管理
+      description: 受信機を管理します。
+    new:
+      title: 受信機の新規登録
+    edit:
+      title: 受信機の編集
+  places:
+    index:
+      title: 場所の管理
+      description: 場所を管理します。
+    new:
+      title: 場所の新規登録
+    edit:
+      title: 場所の編集
   station_menu: ステーション関連メニュー
   station:
     title: ステーションの管理
@@ -39,10 +60,20 @@ ja:
   activerecord:
     models:
       beacon: ビーコン
+      patient: 患者
+      receiver: 受信機
+      place: 場所
     attributes:
       beacon:
         uuid: UUID
         major: メジャー番号
         minor: マイナー番号
         color: 色
+        name: 名前
+      patient:
+        name: 名前
+      receiver:
+        name: 名前
+        description: 備考
+      place:
         name: 名前

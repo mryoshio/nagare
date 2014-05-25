@@ -1,9 +1,7 @@
 %p#notice= notice
-
-%p
-  %b Name:
-  = @place.name
-
-= link_to 'Edit', edit_place_path(@place)
+.row
+  .col-xs-2= label_tag :uuid, Place.human_attribute_name('name')
+  .col-xs-5= @place.name
+= link_to t('action.edit'), edit_place_path(@place)
 \|
-= link_to 'Back', places_path
+= link_to t(:back), places_path

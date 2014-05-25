@@ -1,12 +1,10 @@
 %p#notice= notice
-
-%p
-  %b Name:
-  = @receiver.name
-%p
-  %b Description:
-  = @receiver.description
-
-= link_to 'Edit', edit_receiver_path(@receiver)
+.row
+  .col-xs-2= label_tag :uuid, Receiver.human_attribute_name('name')
+  .col-xs-5= @receiver.name
+.row
+  .col-xs-2= label_tag :uuid, Receiver.human_attribute_name('description')
+  .col-xs-5= @receiver.description
+= link_to t('action.edit'), edit_receiver_path(@receiver)
 \|
-= link_to 'Back', receivers_path
+= link_to t(:back), receivers_path
