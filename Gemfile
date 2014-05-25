@@ -12,6 +12,8 @@ gem 'clerk'
 gem 'newrelic_rpm'
 gem "seedbank"
 gem 'coffee-rails'
+gem 'uglifier'
+gem 'therubyracer', :platforms => :ruby
 
 group :development do
   gem 'html2haml'
@@ -21,8 +23,6 @@ end
 group :development, :test do
   gem 'mysql2'
   gem 'rspec-rails'
-  gem 'therubyracer', :platforms => :ruby
-  gem 'uglifier'
 end
 
 group :test do
@@ -34,6 +34,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 personal = File.expand_path("../Gemfile.personal", __FILE__)
