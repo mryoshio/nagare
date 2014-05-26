@@ -1,16 +1,20 @@
-= form_for @beacon_holder do |f|
+= form_for @beacon_holder, html: { class: "form-horizontal", role: "form" } do |f|
   - if @beacon_holder.errors.any?
     #error_explanation
       %h2= "#{pluralize(@beacon_holder.errors.count, "error")} prohibited this beacon_holder from being saved:"
       %ul
         - @beacon_holder.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :beacon_id
-    = f.number_field :beacon_id
-  .field
-    = f.label :patient_id
-    = f.number_field :patient_id
-  .actions
-    = f.submit 'Save'
+  .form-group
+    .col-xs-2.control-label
+      = f.label :beacon_id
+    .col-md-4
+      = f.select :beacon_id, options_from_collection_for_select(@beacons, 'id', 'name')
+  .form-group
+    .col-xs-2.control-label
+      = f.label :patient_id
+    .col-md-4
+      = f.select :patient_id, options_from_collection_for_select(@patients, 'id', 'name')
+  .form-group
+    .col-md-2.col-md-offset-1.control-label.actions
+      = f.submit t :save

@@ -1,7 +1,5 @@
-%h1 Editing beacon_holder
-
+%h1= t('beacon_holders.edit.title')
 = render 'form'
-
-= link_to 'Show', @beacon_holder
+= link_to t('action.show'), @beacon_holder
 \|
-= link_to 'Back', beacon_holders_path
+= link_to t('back'), beacon_holders_path

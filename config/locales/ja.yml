@@ -12,9 +12,14 @@ ja:
     destroy_confirm: 本当に削除しますか？
   dashboard: ダッシュボード
   beacon_menu: ビーコン関連メニュー
-  beacon_holder:
-    title: ビーコンホルダの管理
-    description: ビーコンと対象を関連付けます。先にビーコンと患者を登録して下さい。
+  beacon_holders:
+    index:
+      title: ビーコンホルダの管理
+      description: ビーコンホルダを管理します。
+    new:
+      title: ビーコンホルダの新規登録
+    edit:
+      title: ビーコンホルダの編集
   beacons:
     index:
       title: ビーコンの管理
@@ -59,11 +64,15 @@ ja:
     description: 設置場所を管理します。
   activerecord:
     models:
+      beacon_holder: ビーコンホルダ
       beacon: ビーコン
       patient: 患者
       receiver: 受信機
       place: 場所
     attributes:
+      beacon_holder:
+        beacon_id: ビーコン
+        patient_id: 患者
       beacon:
         uuid: UUID
         major: メジャー番号
