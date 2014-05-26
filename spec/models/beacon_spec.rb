@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe Beacon do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  subject { Beacon.new }
+
+  it { expect(subject).to be_an_instance_of(Beacon) }
+
 end
