@@ -1,35 +1,15 @@
 require "spec_helper"
 
 describe BeaconHoldersController do
+
   describe "routing" do
-
-    it "routes to #index" do
-      get("/beacon_holders").should route_to("beacon_holders#index")
-    end
-
-    it "routes to #new" do
-      get("/beacon_holders/new").should route_to("beacon_holders#new")
-    end
-
-    it "routes to #show" do
-      get("/beacon_holders/1").should route_to("beacon_holders#show", :id => "1")
-    end
-
-    it "routes to #edit" do
-      get("/beacon_holders/1/edit").should route_to("beacon_holders#edit", :id => "1")
-    end
-
-    it "routes to #create" do
-      post("/beacon_holders").should route_to("beacon_holders#create")
-    end
-
-    it "routes to #update" do
-      put("/beacon_holders/1").should route_to("beacon_holders#update", :id => "1")
-    end
-
-    it "routes to #destroy" do
-      delete("/beacon_holders/1").should route_to("beacon_holders#destroy", :id => "1")
-    end
-
+    it { expect(get: "/beacon_holders").to route_to(controller: "beacon_holders", action: "index") }
+    it { expect(get: "/beacon_holders/new").to route_to(controller: "beacon_holders", action: "new") }
+    it { expect(get: "/beacon_holders/1").to route_to(controller: "beacon_holders", action: "show", id: "1") }
+    it { expect(get: "/beacon_holders/1/edit").to route_to(controller: "beacon_holders", action: "edit", id: "1") }
+    it { expect(post: "/beacon_holders").to route_to(controller: "beacon_holders", action: "create") }
+    it { expect(put: "/beacon_holders/1").to route_to(controller: "beacon_holders", action: "update", id: "1") }
+    it { expect(delete: "/beacon_holders/1").to route_to(controller: "beacon_holders", action: "destroy", id: "1") }
   end
+
 end

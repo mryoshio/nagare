@@ -1,12 +1,10 @@
 %p#notice= notice
-
-%p
-  %b Place:
-  = @station.place_id
-%p
-  %b Receiver:
-  = @station.receiver_id
-
-= link_to 'Edit', edit_station_path(@station)
+.row
+  .col-xs-2= label_tag :place_id, Station.human_attribute_name('place_id')
+  .col-xs-5= @station.place.name
+.row
+  .col-xs-2= label_tag :receiver_id, Station.human_attribute_name('receiver_id')
+  .col-xs-5= @station.receiver.name
+= link_to t('action.edit'), edit_station_path(@station)
 \|
-= link_to 'Back', stations_path
+= link_to t(:back), stations_path

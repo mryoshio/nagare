@@ -1,21 +1,16 @@
-%h1 Listing beacon_holders
-
-%table
+%h1= t('beacon_holders.index.title')
+%table.table.table-striped.table-hover
   %tr
-    %th Beacon
-    %th Patient
+    %th= BeaconHolder.human_attribute_name(:beacon_id)
+    %th= BeaconHolder.human_attribute_name(:patient_id)
     %th
     %th
     %th
-
   - @beacon_holders.each do |beacon_holder|
     %tr
-      %td= beacon_holder.beacon_id
-      %td= beacon_holder.patient_id
-      %td= link_to 'Show', beacon_holder
-      %td= link_to 'Edit', edit_beacon_holder_path(beacon_holder)
-      %td= link_to 'Destroy', beacon_holder, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Beacon holder', new_beacon_holder_path
+      %td= beacon_holder.beacon.name
+      %td= beacon_holder.patient.name
+      %td= link_to t('action.show'), beacon_holder
+      %td= link_to t('action.edit'), edit_beacon_holder_path(beacon_holder)
+      %td= link_to t('action.destroy'), beacon_holder, method: :delete, data: { confirm: t('action.destroy_confirm') }
+= link_to t('beacon_holders.new.title'), new_beacon_holder_path

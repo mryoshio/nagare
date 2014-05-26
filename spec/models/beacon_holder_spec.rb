@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe BeaconHolder do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  subject { BeaconHolder.new }
+
+  it { expect(subject).to be_an_instance_of(BeaconHolder) }
+
 end
