@@ -1,5 +1,8 @@
 class StationsController < ApplicationController
-  before_action :set_station, only: [:show, :edit, :update, :destroy]
+
+  before_action :set_station,   only: [:show, :edit, :update, :destroy]
+  before_action :set_places,    only: [:new, :edit, :update]
+  before_action :set_receivers, only: [:new, :edit, :update]
 
   # GET /stations
   def index
@@ -55,4 +58,13 @@ class StationsController < ApplicationController
     def station_params
       params.require(:station).permit(:place_id, :receiver_id)
     end
+
+  def set_places
+    @places = Place.all
+  end
+
+  def set_receivers
+    @receivers = Receiver.all
+  end
+
 end
