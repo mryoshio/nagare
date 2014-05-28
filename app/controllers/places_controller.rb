@@ -1,4 +1,5 @@
-class PlacesController < ApplicationController
+class PlacesController < MasterController
+
   before_action :set_place, only: [:show, :edit, :update, :destroy]
 
   # GET /places
