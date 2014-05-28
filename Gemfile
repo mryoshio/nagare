@@ -14,6 +14,7 @@ gem "seedbank"
 gem 'coffee-rails'
 gem 'uglifier'
 gem 'therubyracer', :platforms => :ruby
+gem 'redis'
 
 group :development do
   gem 'html2haml'
@@ -30,6 +31,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'rubocop', require: false
+  gem 'mock_redis'
 end
 
 group :production do
