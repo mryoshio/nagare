@@ -1,17 +1,17 @@
 require 'spec_helper'
 
 describe "beacon_holders/show" do
-  before(:each) do
-    @beacon_holder = assign(:beacon_holder, stub_model(BeaconHolder,
-      :beacon_id => 1,
-      :patient_id => 2
-    ))
+
+  before do
+    @beacon_holder = create(:taro_holder)
+    render
   end
 
-  it "renders attributes in <p>" do
-    render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/1/)
-    rendered.should match(/2/)
+  subject { rendered }
+
+  it "renders attribute" do
+    expect(subject).to match(/#{@beacon_holder.beacon.name}/)
+    expect(subject).to match(/#{@beacon_holder.patient.name}/)
   end
+
 end

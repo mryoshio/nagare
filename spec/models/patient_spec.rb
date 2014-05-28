@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe Patient do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  subject { Patient.new }
+
+  it { expect(subject).to be_an_instance_of(Patient) }
+
 end

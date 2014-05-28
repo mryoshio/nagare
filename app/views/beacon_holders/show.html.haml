@@ -1,12 +1,10 @@
 %p#notice= notice
-
-%p
-  %b Beacon:
-  = @beacon_holder.beacon_id
-%p
-  %b Patient:
-  = @beacon_holder.patient_id
-
-= link_to 'Edit', edit_beacon_holder_path(@beacon_holder)
+.row
+  .col-xs-2= label_tag :beacon_id, BeaconHolder.human_attribute_name('beacon_id')
+  .col-xs-5= @beacon_holder.beacon.name
+.row
+  .col-xs-2= label_tag :patient_id, BeaconHolder.human_attribute_name('patient_id')
+  .col-xs-5= @beacon_holder.patient.name
+= link_to t('action.edit'), edit_beacon_holder_path(@beacon_holder)
 \|
-= link_to 'Back', beacon_holders_path
+= link_to t(:back), beacon_holders_path

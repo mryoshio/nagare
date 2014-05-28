@@ -3,16 +3,16 @@
   .col-xs-2= label_tag :uuid, Beacon.human_attribute_name('uuid')
   .col-xs-5= @beacon.uuid
 .row
-  .col-xs-2= label_tag :uuid, Beacon.human_attribute_name('major')
+  .col-xs-2= label_tag :major, Beacon.human_attribute_name('major')
   .col-xs-5= @beacon.major
 .row
-  .col-xs-2= label_tag :uuid, Beacon.human_attribute_name('minor')
+  .col-xs-2= label_tag :minor, Beacon.human_attribute_name('minor')
   .col-xs-5= @beacon.minor
 .row
-  .col-xs-2= label_tag :uuid, Beacon.human_attribute_name('color')
+  .col-xs-2= label_tag :color, Beacon.human_attribute_name('color')
   .col-xs-5= @beacon.color
 .row
-  .col-xs-2= label_tag :uuid, Beacon.human_attribute_name('name')
+  .col-xs-2= label_tag :name, Beacon.human_attribute_name('name')
   .col-xs-5= @beacon.name
 = link_to t('action.edit'), edit_beacon_path(@beacon)
 \|

@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe Receiver do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  subject { Receiver.new }
+
+  it { expect(subject).to be_an_instance_of(Receiver) }
+
 end
