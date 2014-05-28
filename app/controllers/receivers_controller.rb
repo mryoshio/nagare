@@ -1,4 +1,5 @@
-class ReceiversController < ApplicationController
+class ReceiversController < MasterController
+
   before_action :set_receiver, only: [:show, :edit, :update, :destroy]
 
   # GET /receivers

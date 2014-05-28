@@ -1,4 +1,5 @@
-class BeaconsController < ApplicationController
+class BeaconsController < MasterController
+
   before_action :set_beacon, only: [:show, :edit, :update, :destroy]
 
   # GET /beacons

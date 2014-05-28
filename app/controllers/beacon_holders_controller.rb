@@ -1,4 +1,4 @@
-class BeaconHoldersController < ApplicationController
+class BeaconHoldersController < MasterController
 
   before_action :set_beacon_holder, only: [:show, :edit, :update, :destroy]
   before_action :set_beacons,       only: [:new, :edit, :update]

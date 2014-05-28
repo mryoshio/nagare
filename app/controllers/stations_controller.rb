@@ -1,4 +1,4 @@
-class StationsController < ApplicationController
+class StationsController < MasterController
 
   before_action :set_station,   only: [:show, :edit, :update, :destroy]
   before_action :set_places,    only: [:new, :edit, :update]
