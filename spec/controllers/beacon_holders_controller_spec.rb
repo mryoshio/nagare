@@ -62,7 +62,7 @@ describe BeaconHoldersController do
     describe "with invalid params" do
       before do
         BeaconHolder.any_instance.stub(:save).and_return(false)
-        put :update, {:id => beacon_holder.to_param, :beacon_holder => { "beacon_id" => "invalid value" }}, valid_session
+        put :update, { id: beacon_holder.id, beacon_holder: { "beacon_id" => "invalid value" } }, valid_session
       end
 
       it { expect(assigns[:beacon_holder]).to eq(beacon_holder) }
