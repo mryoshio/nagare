@@ -4,14 +4,12 @@ describe BeaconsController do
 
   login_as(:mike_user)
 
-  let!(:beacon) { create(:navy_beacon) }
-
-  let(:valid_attributes) { attributes_for(:blue_beacon) }
   let(:valid_session) { {} }
+  let!(:beacon)       { create(:navy_beacon) }
 
   describe "GET index" do
     before { get :index, {}, valid_session }
-    it { expect(assigns[:beacons].size).to eq(1) }
+    it { expect(assigns[:beacons]).to eq([beacon]) }
   end
 
   describe "GET show" do
@@ -31,7 +29,9 @@ describe BeaconsController do
 
   describe "POST create" do
     describe "with valid params" do
-      before { post :create, { beacon: valid_attributes}, valid_session }
+      let(:valid_attributes) { attributes_for(:blue_beacon) }
+
+      before { post :create, { beacon: valid_attributes }, valid_session }
 
       it { expect(assigns[:beacon]).to be_a(Beacon) }
       it { expect(assigns[:beacon]).to be_persisted }
