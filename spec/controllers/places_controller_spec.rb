@@ -46,7 +46,7 @@ describe PlacesController do
 
       it { expect(assigns[:place]).to be_a_new(Place) }
       it { expect(response).to render_template(:new) }
-      end
+    end
   end
 
   describe "PUT update" do
