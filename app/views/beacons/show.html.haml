@@ -3,6 +3,9 @@
   .col-xs-2= label_tag :uuid, Beacon.human_attribute_name('uuid')
   .col-xs-5= @beacon.uuid
 .row
+  .col-xs-2= label_tag :uuid, Beacon.human_attribute_name('mac_address')
+  .col-xs-5= @beacon.mac_address
+.row
   .col-xs-2= label_tag :major, Beacon.human_attribute_name('major')
   .col-xs-5= @beacon.major
 .row
