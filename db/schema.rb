@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140518153910) do
+ActiveRecord::Schema.define(version: 20140716144230) do
 
   create_table "beacon_holders", force: true do |t|
     t.integer  "beacon_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140518153910) do
 
   create_table "beacons", force: true do |t|
     t.string   "uuid"
+    t.string   "mac_address"
     t.integer  "major"
     t.integer  "minor"
     t.string   "color"
@@ -59,6 +60,15 @@ ActiveRecord::Schema.define(version: 20140518153910) do
   create_table "stations", force: true do |t|
     t.integer  "place_id"
     t.integer  "receiver_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tracks", force: true do |t|
+    t.integer  "beacon_id"
+    t.integer  "receiver_id"
+    t.string   "patient_name"
+    t.string   "place_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

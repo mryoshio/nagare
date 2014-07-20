@@ -54,6 +54,6 @@ class BeaconsController < MasterController
 
     # Only allow a trusted parameter "white list" through.
     def beacon_params
-      params.require(:beacon).permit(:uuid, :major, :minor, :color, :name)
+      params.require(:beacon).permit(:uuid, :mac_address, :major, :minor, :color, :name)
     end
 end
