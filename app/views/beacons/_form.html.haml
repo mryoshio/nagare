@@ -9,7 +9,13 @@
     .col-xs-2.control-label
       = f.label :uuid
     .col-md-4
-      = f.text_field :uuid, autofocus: true, class: "form-control", placeholder: "UUID"
+      = f.text_field :uuid, autofocus: true, class: "form-control", placeholder: "B9407F30-F5F8-466E-AFF9-25556B57FE6D"
+
+  .form-group
+    .col-xs-2.control-label
+      = f.label :mac_address
+    .col-md-4
+      = f.text_field :mac_address, autofocus: true, class: "form-control", placeholder: "00:26:08:0d:92:de"
   .form-group
     .col-xs-2.control-label
       = f.label :major
@@ -29,7 +35,7 @@
     .col-xs-2.control-label
       = f.label :name
     .col-md-4
-      = f.text_field :name, class: "form-control", placeholder: "entrance"
+      = f.text_field :name, class: "form-control", placeholder: 'beacon at hall'
   .form-group
     .col-md-2.col-md-offset-1.control-label.actions
       = f.submit t :save

@@ -21,7 +21,7 @@ module Nagare
     config.i18n.default_locale = :ja
 
     # Redis
-    ENV["REDISTOGO_URL"] ||= "redis://localhost:6379"
+    # ENV["REDISTOGO_URL"] ||= "redis://localhost:6379"
 
     config.generators do |g|
       g.test_framework :rspec,

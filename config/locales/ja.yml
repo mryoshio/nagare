@@ -75,6 +75,7 @@ ja:
         patient_id: 患者
       beacon:
         uuid: UUID
+        mac_address: MACアドレス
         major: メジャー番号
         minor: マイナー番号
         color: 色

@@ -1,7 +1,7 @@
 %h1= t('beacons.index.title')
 %table.table.table-striped.table-hover
   %tr
-    %th= Beacon.human_attribute_name(:uuid)
+    %th= Beacon.human_attribute_name(:mac_address)
     %th= Beacon.human_attribute_name(:major)
     %th= Beacon.human_attribute_name(:minor)
     %th= Beacon.human_attribute_name(:color)
@@ -11,7 +11,7 @@
     %th
   - @beacons.each do |beacon|
     %tr
-      %td= beacon.uuid
+      %td= beacon.mac_address
       %td= beacon.major
       %td= beacon.minor
       %td= beacon.color

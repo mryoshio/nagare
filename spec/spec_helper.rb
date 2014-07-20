@@ -3,7 +3,6 @@ ENV["RAILS_ENV"] ||= "test"
 require File.expand_path("../../config/environment", __FILE__)
 require "rspec/rails"
 require "rspec/autorun"
-require "mock_redis"
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -46,7 +45,4 @@ RSpec.configure do |config|
 
   # Macros
   config.extend ControllerMacros, type: :controller
-
-  # Redis Mock
-  REDIS = MockRedis.new
 end
