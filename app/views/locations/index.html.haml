@@ -1,0 +1,12 @@
+%h1= t('locations.index.title')
+%table.table.table-striped.table-hover
+  %tr
+    %th= Track.human_attribute_name(:created_at)
+    %th= Track.human_attribute_name(:patient_name)
+    %th= Track.human_attribute_name(:place_name)
+  - @tracks.each do |t|
+    %tr
+      %td= t.created_at
+      %td= t.patient_name
+      %td= t.place_name
+
