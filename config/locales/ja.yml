@@ -10,7 +10,7 @@ ja:
     edit: 編集
     destroy: 削除
     destroy_confirm: 本当に削除しますか？
-  dashboard: ダッシュボード
+  dashboard: 管理者メニュー
   beacon_menu: ビーコン関連メニュー
   beacon_holders:
     index:
@@ -61,6 +61,9 @@ ja:
       title: 受信機の新規登録
     edit:
       title: 受信機の編集
+  locations:
+    index:
+      title: ロケーションボード
   activerecord:
     models:
       beacon_holder: ビーコンホルダ
@@ -69,6 +72,7 @@ ja:
       station: ステーション
       place: 設置場所
       receiver: 受信機
+      track: 追跡情報
     attributes:
       beacon_holder:
         beacon_id: ビーコン
@@ -90,3 +94,7 @@ ja:
       receiver:
         name: 名前
         description: 備考
+      track:
+        patient_name: 患者名
+        place_name: 位置
+        created_at: 記録日時
