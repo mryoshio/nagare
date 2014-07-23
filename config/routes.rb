@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     post 'tracks/record'
   end
 
+  get 'dashboard/index'
   resources :stations
   resources :places
   resources :receivers
@@ -10,5 +11,5 @@ Rails.application.routes.draw do
   resources :beacons
   resources :patients
   devise_for :users
-  root to: 'dashboard#index'
+  root to: 'locations#index'
 end
