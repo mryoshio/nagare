@@ -26,6 +26,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'guard-rspec'
   gem 'guard-bundler'
+  gem 'terminal-notifier-guard'
   gem 'rb-fsevent' if `uname` =~ /Darwin/
 end
 
